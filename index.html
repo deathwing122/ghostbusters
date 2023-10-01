@@ -6,21 +6,38 @@
     <title>Охотники за привидениями: Наследники</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css"/>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
 </head>
 <body>
     <header class="header">
         <img src="img/logo.svg" alt="logo: Film." class="header-logo">
         <div class="line"></div>
-        <input type="text" class="search-input" placeholder="Поиск по фильмам...">
-        <nav class="header-nav">
-            <a href="#" class="header-nav-link">Фильмы</a>
-            <a href="#" class="header-nav-link">ТВ</a>
-            <a href="#" class="header-nav-link">Новости</a>
-            <a href="#" class="header-nav-link">О сервисе</a>
-        </nav>
-        <div class="header-buttons">
-            <button class="button sign-up">Регистрация</button>
-            <button class="button login">Войти</button>
+        <div class="m-menu">
+            <input type="text" class="search-input" placeholder="Поиск по фильмам...">
+            <nav class="header-nav">
+                <a href="#" class="header-nav-link">Фильмы</a>
+                <a href="#" class="header-nav-link">ТВ</a>
+                <a href="#" class="header-nav-link">Новости</a>
+                <a href="#" class="header-nav-link">О сервисе</a>
+            </nav>
+            <div class="header-buttons">
+                <button class="button sign-up">Регистрация</button>
+                <button class="button login">Войти</button>
+            </div>
+        </div>
+        <div class="header-mobile-buttons">
+            <button class="button mobile-button search-button">
+                <img src="img/search-icon.svg" alt="" class="button-img">
+            </button>
+            <button class="button mobile-button m-menu-button">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
         </div>
     </header>
     <main class="main">
@@ -29,11 +46,11 @@
                     <div class="film-wrapper">
                         <div class="film-trailer">
                             <img src="img/poster.jpg" alt="" class="film-poster">
-                            <button class="button trailer-button">
+                            <a data-fancybox href="https://www.youtube.com/watch?v=o705uydkgew&ab_channel=iVideos" class="button trailer-button">
                                 <img src="img/play.svg" alt="" class="button-img">
                                 <span class="trailer-button-text">Посмотреть трейлер</span>
-                            </button>
-                        </div>
+                            </a>
+                        </div>  
                         <div class="film-info">
                             <h1 class="film-info-title">Охотники за привидениями: Наследники</h1>
                             <span class="film-info-subtitle">Ghostbusters: Afterlife</span>
@@ -77,10 +94,10 @@
             <section class="cast">
                 <div class="container">
                     <div class="tabs">
-                        <h2 class="section-title cast-title active">Актеры</h2>
-                        <h2 class="section-title cast-title">Создатели</h2>
+                        <h2 class="tab section-title cast-title active" data-target="#actors">Актеры</h2>
+                        <h2 class="tab section-title cast-title" data-target="#creators">Создатели</h2>
                     </div>
-                    <div class="tabs-content">
+                    <div class="tabs-content visible" id="actors">
                         <div class="card">
                             <img src="img/caren-photo.png" alt="" class="card-img">
                             <div class="card-info">
@@ -138,31 +155,110 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tabs-content" id="creators">  
+                        <div class="card">
+                            <img src="img/caren-photo.png" alt="" class="card-img">
+                            <div class="card-info">
+                                <h3 class="card-name">Кэрри Кун</h3>
+                                <span class="card-en-name">Carrie Coon</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="img/caren-photo.png" alt="" class="card-img">
+                            <div class="card-info">
+                                <h3 class="card-name">Билл Мюррей</h3>
+                                <span class="card-en-name">Carrie Coon</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="news">
                 <div class="container">
                     <div class="section-title">Новости по теме</div>
-                    <div class="news-cards">
-                        <div class="news-card">
-                            <span class="news-time">31 марта 2020</span>
-                            <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                          <!-- Slides -->
+                          <div class="swiper-slide">
+                            <div class="news-card">
+                                <span class="news-time">31 марта 2020</span>
+                                <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
+                            </div>
+                            <!-- news-card -->
+                          </div>
+                          <!-- swiper-slide -->
+                          <div class="swiper-slide">
+                            <div class="news-card">
+                                <span class="news-time">31 марта 2020</span>
+                                <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
+                            </div>
+                            <!-- news-card -->
+                          </div>
+                          <!-- swiper-slide -->
+                          <div class="swiper-slide">
+                            <div class="news-card">
+                                <span class="news-time">31 марта 2020</span>
+                                <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
+                            </div>
+                            <!-- news-card -->
+                          </div>
+                          <!-- swiper-slide -->
+                          <div class="swiper-slide">
+                            <div class="news-card">
+                                <span class="news-time">31 марта 2020</span>
+                                <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
+                            </div>
+                            <!-- news-card -->
+                          </div>
+                          <!-- swiper-slide -->
+                          <div class="swiper-slide">
+                            <div class="news-card">
+                                <span class="news-time">31 марта 2020</span>
+                                <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
+                            </div>
+                            <!-- news-card -->
+                          </div>
+                          <!-- swiper-slide -->
+                          <div class="swiper-slide">
+                            <div class="news-card">
+                                <span class="news-time">31 марта 2020</span>
+                                <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
+                            </div>
+                            <!-- news-card -->
+                          </div>
+                          <!-- swiper-slide -->
+                          <div class="swiper-slide">
+                            <div class="news-card">
+                                <span class="news-time">31 марта 2020</span>
+                                <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
+                            </div>
+                            <!-- news-card -->
+                          </div>
+                          <!-- swiper-slide -->
+                          <div class="swiper-slide">
+                            <div class="news-card">
+                                <span class="news-time">31 марта 2020</span>
+                                <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
+                            </div>
+                            <!-- news-card -->
+                          </div>
+                          <!-- swiper-slide -->
                         </div>
-                        <div class="news-card">
-                            <span class="news-time">31 марта 2020</span>
-                            <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
-                        </div>
-                        <div class="news-card">
-                            <span class="news-time">31 марта 2020</span>
-                            <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
-                        </div>
-                        <div class="news-card">
-                            <span class="news-time">31 марта 2020</span>
-                            <h3 class="news-title">«Морбиуса» и «Охотников за привидениями» перенесли на следующий год</h3>
-                        </div>
+                        <!-- swiper-wrapper -->
+                        <button class="button button-next">
+                            <img src="img/arrow.svg" alt="">
+                        </button>
                     </div>
+                    <!-- swiper -->
                 </div>
+                <!-- container -->
             </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
